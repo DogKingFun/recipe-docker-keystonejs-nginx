@@ -1,8 +1,5 @@
 var keystone = require('keystone');
 
-console.log('keystone');
-console.log(process.env.MONGO_URI);
-
 keystone.init({
 
 	'name': 'Website Template',
