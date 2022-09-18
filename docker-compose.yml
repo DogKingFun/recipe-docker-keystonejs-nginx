@@ -27,3 +27,4 @@ services:
     volumes:
       - ./db/init.js:/docker-entrypoint-initdb.d/init.js:ro
       - ./db/mongodb:/data/db
+    command: [mongod, --auth]
