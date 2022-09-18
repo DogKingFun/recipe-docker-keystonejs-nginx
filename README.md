@@ -1,4 +1,4 @@
-# Keystone Docker Boilerplate
+# Respect Keystone Docker Boilerplate
 Docker - KeystoneJS - Mongodb - nginx boilerplate for easy deployment
 
 ## Features
