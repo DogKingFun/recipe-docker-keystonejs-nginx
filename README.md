@@ -24,4 +24,4 @@ Docker - KeystoneJS - Mongodb - nginx boilerplate for easy deployment
 
 ---
 
-> Linux/Mac: Go to __[http://localhost:3000/keystone](http://localhost:3000/keystone)__ to get started.
+> Linux/Mac: Go to __[http://ip:8080/keystone](http://localhost:3000/keystone)__ to get started.
