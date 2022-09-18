@@ -1,0 +1,29 @@
+version: '2'
+
+services:
+  nginx:
+    build: ./nginx/
+    depends_on:
+      - keystone
+    ports:
+      - "8080:80"
+  keystone:
+    build:
+      context: ./keystone
+      args:
+        app_env: ${APP_ENV}
+    volumes:
+      - ./keystone/keystone.js:/usr/src/app/keystone.js
+      - ./keystone/models:/usr/src/app/models
+      - ./keystone/routes:/usr/src/app/routes
+      - ./keystone/updates:/usr/src/app/updates
+    depends_on:
+      - mongodb
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    environment:
+      MONGO_INITDB_DATABASE: admin
+    volumes:
+      - ./db/init.js:/docker-entrypoint-initdb.d/init.js:ro
+      - ./db/mongodb:/data/db
